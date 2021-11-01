@@ -1,0 +1,66 @@
+﻿<Grid x:Class="Kovalevskaya.Components.WritesComponent"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Kovalevskaya.Components"
+      mc:Ignorable="d"
+      Background="White"
+      HorizontalAlignment="Center"
+      Width="250">
+
+    <Grid.Resources>
+        <Style x:Key="ActionButton" TargetType="Button">
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style x:Key="TitleWrite" TargetType="{x:Type TextBlock}">
+            <Setter Property="TextWrapping" Value="NoWrap"/>
+            <Setter Property="TextTrimming" Value="None"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="15"/>
+        </Style>
+    </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        <RowDefinition/>
+        <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Style="{DynamicResource TitleWrite}" 
+                   Text="Дата"/>
+        <TextBlock Style="{DynamicResource TitleWrite}"
+                   Grid.Column="1"
+                   Text="Время"/>
+    <TextBlock Grid.Row="1" Text="20.2.21"/>
+    <TextBlock Grid.Row="1"
+               Grid.Column="1"
+               Text="12:12"/>
+    <TextBlock Style="{StaticResource TitleWrite}"
+                Grid.Row="2"
+               Grid.ColumnSpan="2"
+               Text="Врач"/>
+    <TextBlock Grid.Row="3"
+               Grid.ColumnSpan="2"
+               Text="Иванов Иван Иванович"/>
+    <Button Style="{StaticResource ActionButton}"
+            Grid.Row="5"
+            Content="Изменить"/>
+    <Button Style="{StaticResource ActionButton}"
+            Grid.Row="5"
+            Grid.Column="1"
+            Content="Отменить"/>
+    <Button Grid.Row="6"
+            Grid.ColumnSpan="2"
+            Height="20"
+            Content="Распечатать"/>
+
+</Grid>
